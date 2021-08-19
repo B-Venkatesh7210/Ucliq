@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ucliq/pages/home_page.dart';
+import 'package:ucliq/pages/home_parent.dart';
 
 class AccountInfo extends StatefulWidget {
   const AccountInfo({Key? key}) : super(key: key);
@@ -192,7 +192,7 @@ class _AccountInfoState extends State<AccountInfo> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => HomePage()));
+                                  builder: (context) => HomeParent()));
                         },
                         child: Container(
                             width: double.infinity,

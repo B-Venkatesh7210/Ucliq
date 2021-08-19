@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ucliq/pages/home_page.dart';
+import 'package:ucliq/pages/home_parent.dart';
 
 class UploadUdyamAadhar2 extends StatefulWidget {
   const UploadUdyamAadhar2({Key? key}) : super(key: key);
@@ -39,7 +39,7 @@ class _UploadUdyamAadhar2State extends State<UploadUdyamAadhar2> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => HomePage()));
+                                builder: (context) => HomeParent()));
                       },
                       child: Container(
                           height: 50,

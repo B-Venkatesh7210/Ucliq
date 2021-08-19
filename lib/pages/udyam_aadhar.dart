@@ -130,6 +130,10 @@ class _UdyamAadharState extends State<UdyamAadhar> {
                             children: [
                               Stack(children: [
                                 Container(
+                                  height: 160,
+                                  width: 109,
+                                ),
+                                Container(
                                   child: Image.asset('assets/row_img1.png',
                                       width: 99, height: 135),
                                   height: 151,
@@ -141,19 +145,24 @@ class _UdyamAadharState extends State<UdyamAadhar> {
                                           color:
                                               Color.fromRGBO(215, 59, 70, 1))),
                                 ),
-                                Container(
-                                  child: Center(
-                                    child: Text('X',
-                                        style: GoogleFonts.roboto(
-                                            color: Colors.white,
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w400)),
+                                Positioned.fill(
+                                  child: Align(
+                                    alignment: Alignment.bottomCenter,
+                                    child: Container(
+                                      child: Center(
+                                        child: Text('X',
+                                            style: GoogleFonts.roboto(
+                                                color: Colors.white,
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400)),
+                                      ),
+                                      height: 18,
+                                      width: 18,
+                                      decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: Colors.red),
+                                    ),
                                   ),
-                                  height: 18,
-                                  width: 18,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: Colors.red),
                                 )
                               ]),
                               SizedBox(height: 20),
@@ -168,6 +177,10 @@ class _UdyamAadharState extends State<UdyamAadhar> {
                             children: [
                               Stack(children: [
                                 Container(
+                                  height: 160,
+                                  width: 109,
+                                ),
+                                Container(
                                   child: Image.asset('assets/row_img2.png',
                                       width: 99, height: 135),
                                   height: 151,
@@ -179,21 +192,23 @@ class _UdyamAadharState extends State<UdyamAadhar> {
                                           color:
                                               Color.fromRGBO(215, 59, 70, 1))),
                                 ),
-                                Align(
-                                  alignment: Alignment.bottomCenter,
-                                  child: Container(
-                                    child: Center(
-                                      child: Text('X',
-                                          style: GoogleFonts.roboto(
-                                              color: Colors.white,
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w400)),
+                                Positioned.fill(
+                                  child: Align(
+                                    alignment: Alignment.bottomCenter,
+                                    child: Container(
+                                      child: Center(
+                                        child: Text('X',
+                                            style: GoogleFonts.roboto(
+                                                color: Colors.white,
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400)),
+                                      ),
+                                      height: 18,
+                                      width: 18,
+                                      decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: Colors.red),
                                     ),
-                                    height: 18,
-                                    width: 18,
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: Colors.red),
                                   ),
                                 )
                               ]),
@@ -209,6 +224,10 @@ class _UdyamAadharState extends State<UdyamAadhar> {
                             children: [
                               Stack(children: [
                                 Container(
+                                  height: 160,
+                                  width: 109,
+                                ),
+                                Container(
                                   child: Image.asset('assets/row_img3.png',
                                       width: 99, height: 135),
                                   height: 151,
@@ -220,21 +239,23 @@ class _UdyamAadharState extends State<UdyamAadhar> {
                                           color:
                                               Color.fromRGBO(215, 59, 70, 1))),
                                 ),
-                                Align(
-                                  alignment: Alignment.bottomCenter,
-                                  child: Container(
-                                    child: Center(
-                                      child: Text('X',
-                                          style: GoogleFonts.roboto(
-                                              color: Colors.white,
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w400)),
+                                Positioned.fill(
+                                  child: Align(
+                                    alignment: Alignment.bottomCenter,
+                                    child: Container(
+                                      child: Center(
+                                        child: Text('X',
+                                            style: GoogleFonts.roboto(
+                                                color: Colors.white,
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400)),
+                                      ),
+                                      height: 18,
+                                      width: 18,
+                                      decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: Colors.red),
                                     ),
-                                    height: 18,
-                                    width: 18,
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: Colors.red),
                                   ),
                                 )
                               ]),
