@@ -1,4 +1,4 @@
-# ucliq
+# UCliq
 
 A new Flutter project.
 
