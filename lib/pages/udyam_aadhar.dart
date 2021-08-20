@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ucliq/pages/upload_udyam_aadhar.dart';
+import 'package:ucliq/widgets/redButtonNavigator.dart';
+import 'package:ucliq/widgets/udyamAadharDocs.dart';
 
 class UdyamAadhar extends StatefulWidget {
   const UdyamAadhar({Key? key}) : super(key: key);
@@ -79,22 +81,11 @@ class _UdyamAadharState extends State<UdyamAadhar> {
               SizedBox(height: 25),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: ElevatedButton(
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Color(0xffD73B46))),
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => UploadUdyamAadhar()));
-                    },
-                    child: Container(
-                        width: double.infinity,
-                        height: 50,
-                        child: Center(
-                          child: Text('Upload', style: GoogleFonts.roboto()),
-                        ))),
+                child: RedButtonNavigator(
+                    width: double.infinity,
+                    height: 50,
+                    textName: 'Upload',
+                    navigate: UploadUdyamAadhar()),
               ),
             ],
           ),
@@ -126,146 +117,17 @@ class _UdyamAadharState extends State<UdyamAadhar> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Column(
-                            children: [
-                              Stack(children: [
-                                Container(
-                                  height: 160,
-                                  width: 109,
-                                ),
-                                Container(
-                                  child: Image.asset('assets/row_img1.png',
-                                      width: 99, height: 135),
-                                  height: 151,
-                                  width: 109,
-                                  decoration: BoxDecoration(
-                                      color: Color.fromRGBO(236, 235, 235, 1),
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                          color:
-                                              Color.fromRGBO(215, 59, 70, 1))),
-                                ),
-                                Positioned.fill(
-                                  child: Align(
-                                    alignment: Alignment.bottomCenter,
-                                    child: Container(
-                                      child: Center(
-                                        child: Text('X',
-                                            style: GoogleFonts.roboto(
-                                                color: Colors.white,
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w400)),
-                                      ),
-                                      height: 18,
-                                      width: 18,
-                                      decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: Colors.red),
-                                    ),
-                                  ),
-                                )
-                              ]),
-                              SizedBox(height: 20),
-                              Text('Invoice',
-                                  style: GoogleFonts.roboto(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w500))
-                            ],
-                          ),
+                          UdyamAadharDocs(
+                              textName: 'Invoice',
+                              imageName: 'assets/row_img1.png'),
                           SizedBox(width: 20),
-                          Column(
-                            children: [
-                              Stack(children: [
-                                Container(
-                                  height: 160,
-                                  width: 109,
-                                ),
-                                Container(
-                                  child: Image.asset('assets/row_img2.png',
-                                      width: 99, height: 135),
-                                  height: 151,
-                                  width: 109,
-                                  decoration: BoxDecoration(
-                                      color: Color.fromRGBO(236, 235, 235, 1),
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                          color:
-                                              Color.fromRGBO(215, 59, 70, 1))),
-                                ),
-                                Positioned.fill(
-                                  child: Align(
-                                    alignment: Alignment.bottomCenter,
-                                    child: Container(
-                                      child: Center(
-                                        child: Text('X',
-                                            style: GoogleFonts.roboto(
-                                                color: Colors.white,
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w400)),
-                                      ),
-                                      height: 18,
-                                      width: 18,
-                                      decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: Colors.red),
-                                    ),
-                                  ),
-                                )
-                              ]),
-                              SizedBox(height: 20),
-                              Text('Selfies',
-                                  style: GoogleFonts.roboto(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w500))
-                            ],
-                          ),
+                          UdyamAadharDocs(
+                              textName: 'Selfies',
+                              imageName: 'assets/row_img2.png'),
                           SizedBox(width: 20),
-                          Column(
-                            children: [
-                              Stack(children: [
-                                Container(
-                                  height: 160,
-                                  width: 109,
-                                ),
-                                Container(
-                                  child: Image.asset('assets/row_img3.png',
-                                      width: 99, height: 135),
-                                  height: 151,
-                                  width: 109,
-                                  decoration: BoxDecoration(
-                                      color: Color.fromRGBO(236, 235, 235, 1),
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                          color:
-                                              Color.fromRGBO(215, 59, 70, 1))),
-                                ),
-                                Positioned.fill(
-                                  child: Align(
-                                    alignment: Alignment.bottomCenter,
-                                    child: Container(
-                                      child: Center(
-                                        child: Text('X',
-                                            style: GoogleFonts.roboto(
-                                                color: Colors.white,
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w400)),
-                                      ),
-                                      height: 18,
-                                      width: 18,
-                                      decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: Colors.red),
-                                    ),
-                                  ),
-                                )
-                              ]),
-                              SizedBox(height: 20),
-                              Text('Personal ID',
-                                  style: GoogleFonts.roboto(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w500))
-                            ],
-                          ),
+                          UdyamAadharDocs(
+                              textName: 'Personal Id',
+                              imageName: 'assets/row_img3.png'),
                           SizedBox(width: 20),
                         ],
                       ),

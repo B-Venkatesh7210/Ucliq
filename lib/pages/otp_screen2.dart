@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:ucliq/pages/account_info.dart';
+import 'package:ucliq/widgets/redButtonNavigator.dart';
 
 class OtpScreen2 extends StatefulWidget {
   const OtpScreen2({Key? key}) : super(key: key);
@@ -112,32 +113,6 @@ class _OtpScreen2State extends State<OtpScreen2> {
                               fontWeight: FontWeight.w500,
                               color: Color.fromRGBO(215, 59, 70, 1))),
                     )
-
-                    // Padding(
-                    //   padding: const EdgeInsets.all(15),
-                    //   child: Align(
-                    //     alignment: Alignment.centerLeft,
-                    //     child: Text('Mobile Number',
-                    //         style: GoogleFonts.roboto(
-                    //             fontSize: 16,
-                    //             fontWeight: FontWeight.w400,
-                    //             color: Color.fromRGBO(129, 129, 129, 1))),
-                    //   ),
-                    // ),
-                    // Padding(
-                    //   padding: const EdgeInsets.symmetric(horizontal: 15),
-                    //   child: TextField(
-                    //     controller: tec,
-                    //     decoration: InputDecoration(
-                    //         hintText: "+91| 9874563210",
-                    //         hintStyle: TextStyle(
-                    //             color: Color.fromRGBO(129, 129, 129, 0.25)),
-                    //         border: OutlineInputBorder(
-                    //             borderSide: BorderSide(
-                    //                 color: Color.fromRGBO(129, 129, 129, 1),
-                    //                 width: 2))),
-                    //   ),
-                    // )
                   ],
                 ),
               ),
@@ -148,23 +123,11 @@ class _OtpScreen2State extends State<OtpScreen2> {
                   child: Padding(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    child: ElevatedButton(
-                        style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all(Color(0xffD73B46))),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => AccountInfo()));
-                        },
-                        child: Container(
-                            width: double.infinity,
-                            height: 50,
-                            child: Center(
-                              child:
-                                  Text('Submit', style: GoogleFonts.roboto()),
-                            ))),
+                    child: RedButtonNavigator(
+                        height: 50,
+                        width: double.infinity,
+                        textName: 'Submit',
+                        navigate: AccountInfo()),
                   ),
                 ),
               )

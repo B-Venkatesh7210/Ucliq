@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ucliq/pages/otp_screen2.dart';
+import 'package:ucliq/widgets/redButtonNavigator.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({Key? key}) : super(key: key);
@@ -97,23 +98,12 @@ class _OtpScreenState extends State<OtpScreen> {
                   child: Padding(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    child: ElevatedButton(
-                        style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all(Color(0xffD73B46))),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => OtpScreen2()));
-                        },
-                        child: Container(
-                            width: double.infinity,
-                            height: 50,
-                            child: Center(
-                              child: Text('Get Verification Code',
-                                  style: GoogleFonts.roboto()),
-                            ))),
+                    child: RedButtonNavigator(
+                      textName: 'Get Verification Code',
+                      navigate: OtpScreen2(),
+                      width: double.infinity,
+                      height: 50,
+                    ),
                   ),
                 ),
               )
@@ -124,3 +114,4 @@ class _OtpScreenState extends State<OtpScreen> {
     );
   }
 }
+

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ucliq/pages/home_parent.dart';
+import 'package:ucliq/widgets/redButtonNavigator.dart';
 
 class AccountInfo extends StatefulWidget {
   const AccountInfo({Key? key}) : super(key: key);
@@ -184,23 +185,11 @@ class _AccountInfoState extends State<AccountInfo> {
                   child: Padding(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    child: ElevatedButton(
-                        style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all(Color(0xffD73B46))),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomeParent()));
-                        },
-                        child: Container(
-                            width: double.infinity,
-                            height: 50,
-                            child: Center(
-                              child:
-                                  Text('Submit', style: GoogleFonts.roboto()),
-                            ))),
+                    child: RedButtonNavigator(
+                        height: 50,
+                        width: double.infinity,
+                        textName: 'Submit',
+                        navigate: HomeParent()),
                   ),
                 ),
               )

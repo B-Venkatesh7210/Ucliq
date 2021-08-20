@@ -102,204 +102,64 @@ class _BusinessProofState extends State<BusinessProof> {
             thickness: 2,
             color: Color(0xffEEEEEE),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('GST Cetificate',
-                    style: GoogleFonts.roboto(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400)),
-                IconButton(
-                    onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
-              ],
-            ),
-          ),
+          BusinessProofListItem(textName: 'GST Certificate'),
           SizedBox(height: 1),
           Divider(
             height: 5,
             thickness: 2,
             color: Color(0xffEEEEEE),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('Udyam AAdhar',
-                    style: GoogleFonts.roboto(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400)),
-                IconButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => UdyamAadhar()));
-                    },
-                    icon: Icon(Icons.arrow_forward_ios))
-              ],
-            ),
-          ),
+          BusinessProofListItem(
+              textName: 'Udyam AAdhar', navigate: UdyamAadhar()),
           SizedBox(height: 1),
           Divider(
             height: 5,
             thickness: 2,
             color: Color(0xffEEEEEE),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('Shop & Establish License',
-                    style: GoogleFonts.roboto(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400)),
-                IconButton(
-                    onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
-              ],
-            ),
-          ),
+          BusinessProofListItem(textName: 'Shop & Establish License'),
           SizedBox(height: 1),
           Divider(
             height: 5,
             thickness: 2,
             color: Color(0xffEEEEEE),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('Trade Certificate/License',
-                    style: GoogleFonts.roboto(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400)),
-                IconButton(
-                    onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
-              ],
-            ),
-          ),
+          BusinessProofListItem(textName: 'Trade Certificate/License'),
           SizedBox(height: 1),
           Divider(
             height: 5,
             thickness: 2,
             color: Color(0xffEEEEEE),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('FSSAI Registraion',
-                    style: GoogleFonts.roboto(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400)),
-                IconButton(
-                    onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
-              ],
-            ),
-          ),
+          BusinessProofListItem(textName: 'FSSAI Registraion'),
           SizedBox(height: 1),
           Divider(
             height: 5,
             thickness: 2,
             color: Color(0xffEEEEEE),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('Drug Registration',
-                    style: GoogleFonts.roboto(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400)),
-                IconButton(
-                    onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
-              ],
-            ),
-          ),
+          BusinessProofListItem(textName: 'Drug Registration'),
           SizedBox(height: 1),
           Divider(
             height: 5,
             thickness: 2,
             color: Color(0xffEEEEEE),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('Drug License',
-                    style: GoogleFonts.roboto(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400)),
-                IconButton(
-                    onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
-              ],
-            ),
-          ),
+          BusinessProofListItem(textName: 'Drug License'),
           SizedBox(height: 1),
           Divider(
             height: 5,
             thickness: 2,
             color: Color(0xffEEEEEE),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('Current',
-                    style: GoogleFonts.roboto(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400)),
-                IconButton(
-                    onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
-              ],
-            ),
-          ),
+          BusinessProofListItem(textName: 'Current'),
           SizedBox(height: 1),
           Divider(
             height: 5,
             thickness: 2,
             color: Color(0xffEEEEEE),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text('Accout Cheque',
-                    style: GoogleFonts.roboto(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400)),
-                IconButton(
-                    onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
-              ],
-            ),
-          ),
+          BusinessProofListItem(textName: 'Accout Cheque'),
           Divider(
             height: 5,
             thickness: 2,
@@ -307,6 +167,42 @@ class _BusinessProofState extends State<BusinessProof> {
           ),
         ],
       )),
+    );
+  }
+}
+
+class BusinessProofListItem extends StatelessWidget {
+  final String textName;
+  final Widget? navigate;
+  BusinessProofListItem({
+    required this.textName,
+    this.navigate,
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        if (navigate != null)
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => navigate!));
+      },
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(textName,
+                style: GoogleFonts.roboto(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400)),
+            Icon(Icons.arrow_forward_ios)
+          ],
+        ),
+      ),
     );
   }
 }

@@ -2,6 +2,8 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ucliq/pages/upoad_udyam_aadhar2.dart';
+import 'package:ucliq/widgets/redButtonNavigator.dart';
+import 'package:ucliq/widgets/udyamAadharDocs.dart';
 
 class UploadUdyamAadhar extends StatefulWidget {
   const UploadUdyamAadhar({Key? key}) : super(key: key);
@@ -50,125 +52,12 @@ class _UploadUdyamAadharState extends State<UploadUdyamAadhar> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Column(
-                      children: [
-                        Stack(children: [
-                          Container(
-                            height: 160,
-                            width: 109,
-                          ),
-                          Container(
-                            child: Image.asset('assets/row_img1.png',
-                                width: 99, height: 135),
-                            height: 151,
-                            width: 109,
-                            decoration: BoxDecoration(
-                                color: Color.fromRGBO(236, 235, 235, 1),
-                                borderRadius: BorderRadius.circular(8),
-                                border: Border.all(
-                                    color: Color.fromRGBO(87, 183, 147, 1))),
-                          ),
-                          Positioned.fill(
-                            child: Align(
-                              alignment: Alignment.bottomCenter,
-                              child: Container(
-                                child: Center(
-                                    child: Icon(
-                                  Icons.check,
-                                  color: Colors.white,
-                                  size: 12,
-                                )),
-                                height: 18,
-                                width: 18,
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Color.fromRGBO(87, 183, 147, 1)),
-                              ),
-                            ),
-                          )
-                        ]),
-                      ],
-                    ),
+                    UdyamAadharDocs(
+                        imageName: 'assets/row_img1.png', isRed: false),
                     SizedBox(width: 20),
-                    Column(
-                      children: [
-                        Stack(children: [
-                          Container(
-                            height: 160,
-                            width: 109,
-                          ),
-                          Container(
-                            child: Image.asset('assets/row_img2.png',
-                                width: 99, height: 135),
-                            height: 151,
-                            width: 109,
-                            decoration: BoxDecoration(
-                                color: Color.fromRGBO(236, 235, 235, 1),
-                                borderRadius: BorderRadius.circular(8),
-                                border: Border.all(
-                                    color: Color.fromRGBO(215, 59, 70, 1))),
-                          ),
-                          Positioned.fill(
-                            child: Align(
-                              alignment: Alignment.bottomCenter,
-                              child: Container(
-                                child: Center(
-                                  child: Text('X',
-                                      style: GoogleFonts.roboto(
-                                          color: Colors.white,
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w400)),
-                                ),
-                                height: 18,
-                                width: 18,
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle, color: Colors.red),
-                              ),
-                            ),
-                          )
-                        ]),
-                      ],
-                    ),
+                    UdyamAadharDocs(imageName: 'assets/row_img2.png'),
                     SizedBox(width: 20),
-                    Column(
-                      children: [
-                        Stack(children: [
-                          Container(
-                            height: 160,
-                            width: 109,
-                          ),
-                          Container(
-                            child: Image.asset('assets/row_img3.png',
-                                width: 99, height: 135),
-                            height: 151,
-                            width: 109,
-                            decoration: BoxDecoration(
-                                color: Color.fromRGBO(236, 235, 235, 1),
-                                borderRadius: BorderRadius.circular(8),
-                                border: Border.all(
-                                    color: Color.fromRGBO(215, 59, 70, 1))),
-                          ),
-                          Positioned.fill(
-                            child: Align(
-                              alignment: Alignment.bottomCenter,
-                              child: Container(
-                                child: Center(
-                                  child: Text('X',
-                                      style: GoogleFonts.roboto(
-                                          color: Colors.white,
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w400)),
-                                ),
-                                height: 18,
-                                width: 18,
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle, color: Colors.red),
-                              ),
-                            ),
-                          )
-                        ]),
-                      ],
-                    ),
+                    UdyamAadharDocs(imageName: 'assets/row_img3.png'),
                     SizedBox(width: 20),
                   ],
                 ),
@@ -201,23 +90,27 @@ class _UploadUdyamAadharState extends State<UploadUdyamAadhar> {
                       SizedBox(height: 20),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 30),
-                        child: ElevatedButton(
-                            style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(
-                                    Color(0xffD73B46))),
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          UploadUdyamAadhar2()));
-                            },
-                            child: Container(
-                                height: 50,
-                                child: Center(
-                                  child: Text('Upload',
-                                      style: GoogleFonts.roboto()),
-                                ))),
+                        child: RedButtonNavigator(
+                            height: 50,
+                            textName: 'Upload',
+                            navigate: UploadUdyamAadhar2()),
+                        // child: ElevatedButton(
+                        //     style: ButtonStyle(
+                        //         backgroundColor: MaterialStateProperty.all(
+                        //             Color(0xffD73B46))),
+                        //     onPressed: () {
+                        //       Navigator.push(
+                        //           context,
+                        //           MaterialPageRoute(
+                        //               builder: (context) =>
+                        //                   UploadUdyamAadhar2()));
+                        //     },
+                        //     child: Container(
+                        //         height: 50,
+                        //         child: Center(
+                        //           child: Text('Upload',
+                        //               style: GoogleFonts.roboto()),
+                        //         ))),
                       ),
                     ],
                   ),

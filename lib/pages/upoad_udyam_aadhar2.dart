@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ucliq/pages/home_parent.dart';
+import 'package:ucliq/widgets/redButtonNavigator.dart';
 
 class UploadUdyamAadhar2 extends StatefulWidget {
   const UploadUdyamAadhar2({Key? key}) : super(key: key);
@@ -31,22 +32,10 @@ class _UploadUdyamAadhar2State extends State<UploadUdyamAadhar2> {
                 SizedBox(height: 50),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 5),
-                  child: ElevatedButton(
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Color(0xffD73B46))),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomeParent()));
-                      },
-                      child: Container(
-                          height: 50,
-                          child: Center(
-                            child: Text('Continue to Home',
-                                style: GoogleFonts.roboto()),
-                          ))),
+                  child: RedButtonNavigator(
+                      height: 50,
+                      textName: 'Continue to Home',
+                      navigate: HomeParent()),
                 ),
               ],
             ),
