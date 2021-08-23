@@ -18,7 +18,6 @@ class _HomeParentState extends State<HomeParent> {
   Widget build(BuildContext context) {
     return Scaffold(
         bottomNavigationBar: BottomNavigationBar(
-          elevation: 8,
           currentIndex: index,
           onTap: (value) {
             setState(() {

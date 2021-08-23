@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ucliq/pages/settings.dart';
 import 'package:ucliq/widgets/dashboardItems.dart';
 
 class Dashboard extends StatefulWidget {
@@ -160,12 +159,7 @@ class _DashboardState extends State<Dashboard> {
                         Material(
                           color: Colors.white,
                           child: InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Settings()));
-                            },
+                            onTap: () {},
                             child: Padding(
                               padding: const EdgeInsets.symmetric(vertical: 5),
                               child: Row(
