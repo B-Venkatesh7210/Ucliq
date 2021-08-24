@@ -4,10 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 class DashboardItems extends StatelessWidget {
   final String textName;
   final String imgName;
+  final Widget? navigate;
 
-  const DashboardItems({
+  DashboardItems({
     required this.textName,
     required this.imgName,
+    this.navigate,
     Key? key,
   }) : super(key: key);
 
@@ -17,7 +19,8 @@ class DashboardItems extends StatelessWidget {
       color: Colors.white,
       child: InkWell(
         onTap: () {
-          //todo
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => navigate!));
         },
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),

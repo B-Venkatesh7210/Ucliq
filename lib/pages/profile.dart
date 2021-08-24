@@ -20,23 +20,23 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      // resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text('Profile'),
       ),
       body: SafeArea(
-          child: Column(
-        children: [
-          Expanded(
-            flex: 2,
-            child: Container(
+          child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
               width: double.infinity,
+              height: MediaQuery.of(context).size.height / 4,
               color: Color.fromRGBO(215, 59, 70, 1),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 110,
+                    width: 120,
                     height: 110,
                     child: Stack(children: [
                       Container(
@@ -56,32 +56,38 @@ class _ProfileState extends State<Profile> {
                             shape: BoxShape.circle),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
+                        padding: const EdgeInsets.only(bottom: 10, left: 15),
                         child: Align(
                           alignment: Alignment.centerRight,
-                          child: Image.asset(
-                            'assets/camera.png',
-                            width: 25,
-                            height: 18,
-                          ),
+                          child: IconButton(
+                              onPressed: () {
+                                print('tapped');
+                              },
+                              icon: Image.asset('assets/camera2.png'),
+                              iconSize: 5),
+                          // child: Image.asset(
+                          //   'assets/camera2.png',
+                          //   width: 25,
+                          //   height: 18,
+                          // ),
                         ),
                       )
                     ]),
                   ),
-                  Text(
-                    'ABCA',
-                    style: GoogleFonts.roboto(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 15),
+                    child: Text(
+                      'ABCA',
+                      style: GoogleFonts.roboto(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    ),
                   )
                 ],
               ),
             ),
-          ),
-          Expanded(
-            flex: 5,
-            child: Container(
+            Container(
               width: double.infinity,
               color: Colors.white,
               child: Padding(
@@ -150,14 +156,13 @@ class _ProfileState extends State<Profile> {
                               color: Color.fromRGBO(129, 129, 129, 1))),
                     ),
                     SizedBox(height: 65),
-                    RedButtonNavigator(
-                        textName: 'SAVE', navigate: Settings())
+                    RedButtonNavigator(textName: 'SAVE', navigate: Settings())
                   ],
                 ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       )),
     );
   }

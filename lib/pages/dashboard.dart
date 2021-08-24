@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ucliq/pages/myOrders.dart';
 import 'package:ucliq/pages/settings.dart';
 import 'package:ucliq/widgets/dashboardItems.dart';
 
@@ -77,6 +78,7 @@ class _DashboardState extends State<Dashboard> {
                         DashboardItems(
                           textName: 'My Orders',
                           imgName: 'assets/dbimg1.png',
+                          navigate: MyOrders(),
                         ),
                         DashboardItems(
                           textName: 'Returns and Refunds',

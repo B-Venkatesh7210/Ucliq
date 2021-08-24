@@ -239,3 +239,37 @@ class _SettingsState extends State<Settings> {
     );
   }
 }
+
+class SettingsItem extends StatelessWidget {
+  final String textName;
+  final Widget? navigate;
+  SettingsItem({
+    required this.textName,
+    this.navigate,
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      child: Material(
+        color: Colors.white,
+        child: InkWell(
+          onTap: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Profile()));
+          },
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
+            child: Text(
+              'Edit Profile',
+              style:
+                  GoogleFonts.roboto(fontSize: 18, fontWeight: FontWeight.w400),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
