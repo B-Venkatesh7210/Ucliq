@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:ucliq/models/myOrders.dart';
+import 'package:ucliq/models/myOrdersModel.dart';
+
+import 'package:ucliq/pages/trackOrder.dart';
 
 class OrderDetails extends StatefulWidget {
   final MyOrderDetails orderDetails;
@@ -13,7 +15,8 @@ class OrderDetails extends StatefulWidget {
 }
 
 class _OrderDetailsState extends State<OrderDetails> {
-  var dateFormat = DateFormat("dd'/'MM'/'yyyy");
+  var dateFormat = DateFormat("dd MMM yyyy");
+  var dateFormat1 = DateFormat("dd'/'MM'/'yyyy");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +52,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                           fontWeight: FontWeight.w500),
                     ),
                     Text(
-                      'Placed On : ${dateFormat.format(widget.orderDetails.date!)}',
+                      'Placed On : ${dateFormat1.format(widget.orderDetails.date!)}',
                       style: GoogleFonts.roboto(
                           color: Color.fromRGBO(215, 59, 70, 1),
                           fontSize: 10,
@@ -95,7 +98,8 @@ class _OrderDetailsState extends State<OrderDetails> {
                       ),
                       SizedBox(height: 5),
                       Text(
-                        'Expected Delivery: 23 Jul 2021',
+                        'Expected Delivery: ${dateFormat.format(widget.orderDetails.expDate!)}',
+                        // 'Expected Delivery: 23 Jul 2021',
                         style: GoogleFonts.roboto(
                             color: Color.fromRGBO(99, 99, 99, 1),
                             fontSize: 10,
@@ -148,7 +152,14 @@ class _OrderDetailsState extends State<OrderDetails> {
                                 primary: Colors.white,
                                 side: BorderSide(
                                     color: Color.fromRGBO(215, 59, 70, 1))),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => TrackOrder(
+                                            orderDetails: widget.orderDetails,
+                                          )));
+                            },
                             child: Text(
                               'Track Order',
                               style: GoogleFonts.roboto(

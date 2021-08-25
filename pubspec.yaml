@@ -27,6 +27,7 @@ dependencies:
   pin_code_fields: ^7.3.0
   dotted_border: ^2.0.0+1
   intl: ^0.17.0
+  timeline_tile: ^2.0.0
   
 
 

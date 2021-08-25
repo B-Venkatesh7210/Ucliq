@@ -10,24 +10,32 @@ class MyOrderDetails {
   String? img;
   DateTime? date;
   DateTime? expDate;
+  DateTime? oplacedDate;
+  DateTime? overifiedDate;
+  DateTime? ocancelledDate;
   String? statusText;
   Color? statusColor;
 
   MyOrderDetails(
       {this.orderId,
+      this.ocancelledDate,
+      this.oplacedDate,
+      this.overifiedDate,
       this.date,
       this.img,
       this.shopName,
       this.orderDesp,
       this.price,
-      this.expDate
-      });
+      this.expDate});
 }
 
 MyOrderDetails getOrderDetails({MyOrderDetails? order, Status? status}) {
   MyOrderDetails? orderDetails = MyOrderDetails();
   if (status == Status.CANCELLED) {
     orderDetails.date = order!.date;
+    orderDetails.ocancelledDate = order.ocancelledDate;
+    orderDetails.overifiedDate = order.overifiedDate;
+    orderDetails.oplacedDate = order.oplacedDate;
     orderDetails.expDate = order.expDate;
     orderDetails.orderDesp = order.orderDesp;
     orderDetails.price = order.price;
@@ -41,6 +49,9 @@ MyOrderDetails getOrderDetails({MyOrderDetails? order, Status? status}) {
     return orderDetails;
   } else if (status == Status.PENDING) {
     orderDetails.date = order!.date;
+    orderDetails.ocancelledDate = order.ocancelledDate;
+    orderDetails.overifiedDate = order.overifiedDate;
+    orderDetails.oplacedDate = order.oplacedDate;
     orderDetails.expDate = order.expDate;
     orderDetails.price = order.price;
     orderDetails.orderDesp = order.orderDesp;
@@ -54,6 +65,9 @@ MyOrderDetails getOrderDetails({MyOrderDetails? order, Status? status}) {
     return orderDetails;
   } else {
     orderDetails.date = order!.date;
+    orderDetails.ocancelledDate = order.ocancelledDate;
+    orderDetails.overifiedDate = order.overifiedDate;
+    orderDetails.oplacedDate = order.oplacedDate;
     orderDetails.expDate = order.expDate;
     orderDetails.orderDesp = order.orderDesp;
     orderDetails.price = order.price;
@@ -80,6 +94,11 @@ List<MyOrderDetails> orderItems = [
         orderDesp: 'Skin out cleaned and chopped',
         img: 'assets/myOrdersImg1.png',
         date: DateTime.now(),
+        expDate: DateTime.now(),
+        oplacedDate: DateTime.now(),
+        overifiedDate: DateTime.now(),
+        ocancelledDate: DateTime.now()
+        
       )),
   getOrderDetails(
       status: Status.CANCELLED,
@@ -90,6 +109,10 @@ List<MyOrderDetails> orderItems = [
         orderDesp: 'Skin out cleaned and chopped',
         img: 'assets/myOrdersImg2.png',
         date: DateTime.now(),
+        expDate: DateTime.now(),
+        oplacedDate: DateTime.now(),
+        overifiedDate: DateTime.now(),
+        ocancelledDate: DateTime.now()
       )),
   getOrderDetails(
       status: Status.DELIVERED,
@@ -100,6 +123,10 @@ List<MyOrderDetails> orderItems = [
         orderDesp: 'Skin out cleaned and chopped',
         img: 'assets/myOrdersImg3.png',
         date: DateTime.now(),
+        expDate: DateTime.now(),
+        oplacedDate: DateTime.now(),
+        overifiedDate: DateTime.now(),
+        ocancelledDate: DateTime.now()
       )),
   getOrderDetails(
       status: Status.DELIVERED,
@@ -110,5 +137,37 @@ List<MyOrderDetails> orderItems = [
         orderDesp: 'Skin out cleaned and chopped',
         img: 'assets/myOrdersImg4.png',
         date: DateTime.now(),
+        expDate: DateTime.now(),
+        oplacedDate: DateTime.now(),
+        overifiedDate: DateTime.now(),
+        ocancelledDate: DateTime.now()
+      )),
+  getOrderDetails(
+      status: Status.DELIVERED,
+      order: MyOrderDetails(
+        orderId: 'ASDFG5499860',
+        price: 3000,
+        shopName: 'RK Chicken',
+        orderDesp: 'Skin out cleaned and chopped',
+        img: 'assets/myOrdersImg3.png',
+        date: DateTime.now(),
+        expDate: DateTime.now(),
+        oplacedDate: DateTime.now(),
+        overifiedDate: DateTime.now(),
+        ocancelledDate: DateTime.now()
+      )),
+  getOrderDetails(
+      status: Status.DELIVERED,
+      order: MyOrderDetails(
+        orderId: 'ASDFG5499860',
+        price: 3000,
+        shopName: 'RK Chicken',
+        orderDesp: 'Skin out cleaned and chopped',
+        img: 'assets/myOrdersImg4.png',
+        date: DateTime.now(),
+        expDate: DateTime.now(),
+        oplacedDate: DateTime.now(),
+        overifiedDate: DateTime.now(),
+        ocancelledDate: DateTime.now()
       )),
 ];

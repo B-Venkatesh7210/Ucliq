@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ucliq/models/myOrders.dart';
-import 'package:intl/intl.dart';
-import 'package:ucliq/pages/orderDetails.dart';
-import 'package:ucliq/widgets/myOrders.dart';
+
+import 'package:ucliq/models/myOrdersModel.dart';
+
+import 'package:ucliq/widgets/myOrdersWidget.dart';
 
 class MyOrders extends StatefulWidget {
   const MyOrders({Key? key}) : super(key: key);
@@ -147,4 +147,3 @@ class _MyOrdersState extends State<MyOrders> {
     );
   }
 }
-

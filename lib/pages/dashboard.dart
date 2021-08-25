@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ucliq/models/myOrdersModel.dart';
+import 'package:ucliq/pages/buyAgain.dart';
 import 'package:ucliq/pages/myOrders.dart';
+import 'package:ucliq/pages/returnsandrefunds.dart';
 import 'package:ucliq/pages/settings.dart';
 import 'package:ucliq/widgets/dashboardItems.dart';
 
 class Dashboard extends StatefulWidget {
+  
   const Dashboard({Key? key}) : super(key: key);
 
   @override
@@ -83,10 +87,12 @@ class _DashboardState extends State<Dashboard> {
                         DashboardItems(
                           textName: 'Returns and Refunds',
                           imgName: 'assets/dbimg2.png',
+                          navigate: ReturnsAndRefunds(),
                         ),
                         DashboardItems(
                           textName: 'Buy Again',
                           imgName: 'assets/dbimg3.png',
+                          navigate: BuyAgain(),
                         ),
                         DashboardItems(
                           textName: 'My Favourites',

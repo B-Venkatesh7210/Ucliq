@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:ucliq/models/myOrders.dart';
+import 'package:ucliq/models/myOrdersModel.dart';
 import 'package:ucliq/pages/orderDetails.dart';
 
 class MyOrder extends StatelessWidget {
@@ -16,6 +16,7 @@ class MyOrder extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
+        
         Navigator.push(
             context,
             MaterialPageRoute(
