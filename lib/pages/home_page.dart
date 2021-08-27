@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ucliq/pages/dashboard.dart';
+import 'package:ucliq/widgets/dialogBoxCallSupport.dart';
+import 'package:ucliq/widgets/greenContainerListItemWidget.dart';
 
 import 'kyc_page.dart';
 
@@ -38,7 +40,11 @@ class _HomePageState extends State<HomePage> {
                                   borderRadius: BorderRadius.circular(8))),
                           backgroundColor:
                               MaterialStateProperty.all(Color(0xffD73B46))),
-                      onPressed: () {},
+                      onPressed: () {
+                        showDialog(
+                            context: context,
+                            builder: (context) => DialogBoxCallSupport());
+                      },
                       child: Row(
                         children: [
                           Image.asset(
@@ -372,12 +378,395 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              // Container(
-              //   width: double.infinity,
-              //   height: 1000,
-              //   color: Colors.red,
-              // ),
-              SizedBox(height: 5000)
+              Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                  color: Color.fromRGBO(217, 234, 209, 1),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          GreenContainerListItem(
+                            img: 'assets/homeImg1.png',
+                            height: 6,
+                            width: 4,
+                            color: Colors.white,
+                          ),
+                          GreenContainerListItem(
+                            img: 'assets/homeImg2.png',
+                            height: 6,
+                            width: 4,
+                            color: Colors.white,
+                          ),
+                          GreenContainerListItem(
+                            img: 'assets/homeImg3.png',
+                            height: 6,
+                            width: 4,
+                            color: Colors.white,
+                          )
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          GreenContainerListItem(
+                            img: 'assets/homeImg3.png',
+                            height: 6,
+                            width: 4,
+                            color: Colors.white,
+                          ),
+                          GreenContainerListItem(
+                            img: 'assets/homeImg5.png',
+                            height: 6,
+                            width: 4,
+                            color: Colors.white,
+                          ),
+                        ],
+                      ),
+                    ],
+                  )),
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(vertical: 20),
+                color: Colors.grey[300],
+                child: Column(
+                  children: [
+                    Text(
+                      'To see wholesale prices & buy products',
+                      style: GoogleFonts.roboto(
+                          color: Color.fromRGBO(109, 109, 109, 1),
+                          fontSize: 9,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'COMPLETE SHOP’S KYC',
+                      style: GoogleFonts.roboto(
+                          color: Color.fromRGBO(215, 59, 70, 1),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w700),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'KYC is needed so that only shop owners like you can see\nwholesale prices and not your shop’s customers',
+                      style: GoogleFonts.roboto(
+                          color: Color.fromRGBO(109, 109, 109, 1),
+                          fontSize: 9,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    SizedBox(height: 20),
+                    Container(
+                      height: MediaQuery.of(context).size.height / 20,
+                      width: MediaQuery.of(context).size.width / 3,
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            gradient: LinearGradient(colors: [
+                              Color.fromRGBO(215, 59, 70, 1),
+                              Color.fromRGBO(255, 229, 0, 1)
+                            ])),
+                        child: ElevatedButton(
+                            style: ButtonStyle(
+                              elevation: MaterialStateProperty.all(0),
+                              backgroundColor:
+                                  MaterialStateProperty.all(Colors.transparent),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => KycPage()));
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text('Upload KYC'),
+                                Icon(Icons.arrow_right)
+                              ],
+                            )),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 20),
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Divider(
+                    height: 0,
+                    thickness: 2,
+                    color: Color.fromRGBO(215, 59, 70, 1),
+                  ),
+                  Container(
+                    color: Color.fromRGBO(215, 59, 70, 1),
+                    height: MediaQuery.of(context).size.height / 20,
+                    width: MediaQuery.of(context).size.width / 2,
+                    child: Center(
+                      child: Text(
+                        'TOP SELLING PRODUCTS',
+                        style: GoogleFonts.roboto(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        GreenContainerListItem(
+                            img: 'assets/homeImg6.png',
+                            color: Color.fromRGBO(217, 234, 209, 1),
+                            height: 4,
+                            width: 2.5),
+                        GreenContainerListItem(
+                            img: 'assets/homeImg1.png',
+                            color: Color.fromRGBO(217, 234, 209, 1),
+                            height: 4,
+                            width: 2.5),
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        GreenContainerListItem(
+                            img: 'assets/homeImg2.png',
+                            color: Color.fromRGBO(217, 234, 209, 1),
+                            height: 4,
+                            width: 2.5),
+                        GreenContainerListItem(
+                            img: 'assets/homeImg3.png',
+                            color: Color.fromRGBO(217, 234, 209, 1),
+                            height: 4,
+                            width: 2.5),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Divider(
+                    height: 0,
+                    thickness: 2,
+                    color: Color.fromRGBO(215, 59, 70, 1),
+                  ),
+                  Container(
+                    color: Color.fromRGBO(215, 59, 70, 1),
+                    height: MediaQuery.of(context).size.height / 20,
+                    width: MediaQuery.of(context).size.width / 2,
+                    child: Center(
+                      child: Text(
+                        'BEST SELLING PRODUCTS',
+                        style: GoogleFonts.roboto(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        GreenContainerListItem(
+                            img: 'assets/homeImg6.png',
+                            color: Color.fromRGBO(217, 234, 209, 1),
+                            height: 4,
+                            width: 2.5),
+                        GreenContainerListItem(
+                            img: 'assets/homeImg1.png',
+                            color: Color.fromRGBO(217, 234, 209, 1),
+                            height: 4,
+                            width: 2.5),
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        GreenContainerListItem(
+                            img: 'assets/homeImg2.png',
+                            color: Color.fromRGBO(217, 234, 209, 1),
+                            height: 4,
+                            width: 2.5),
+                        GreenContainerListItem(
+                            img: 'assets/homeImg3.png',
+                            color: Color.fromRGBO(217, 234, 209, 1),
+                            height: 4,
+                            width: 2.5),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height / 5.5,
+                width: double.infinity,
+                color: Color.fromRGBO(178, 72, 78, 1),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 20),
+                      child: Text(
+                        'BUY UCLIQ FULFILLED PRODUCTS',
+                        style: GoogleFonts.roboto(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700),
+                      ),
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Stack(children: [
+                          Image.asset('assets/triangle1.png', width: 32),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 18, top: 8),
+                            child:
+                                Image.asset('assets/triangle2.png', width: 32),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 35),
+                            child:
+                                Image.asset('assets/triangle3.png', width: 41),
+                          )
+                        ]),
+                        Stack(children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 19.5, top: 25),
+                            child: Image.asset(
+                              'assets/polygon.png',
+                              width: 115,
+                            ),
+                          ),
+                          Padding(
+                              padding: const EdgeInsets.only(left: 20, top: 20),
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => KycPage()));
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: Color.fromRGBO(255, 230, 0, 1),
+                                      borderRadius: BorderRadius.only(
+                                          bottomLeft: Radius.circular(15),
+                                          topLeft: Radius.circular(15))),
+                                  width:
+                                      MediaQuery.of(context).size.width / 3.45,
+                                  height: 30,
+                                  child: Center(
+                                    child: Text('UPLOAD KYC',
+                                        style: GoogleFonts.roboto(
+                                            color: Colors.black,
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w500)),
+                                  ),
+                                ),
+                              )),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 60, left: 36),
+                            child: InkWell(
+                              onTap: () {
+                                print('tapped');
+                              },
+                              child: Container(
+                                child: Center(
+                                  child: Text('BUY NOW',
+                                      style: GoogleFonts.roboto(
+                                          color: Colors.white,
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.w500)),
+                                ),
+                                color: Color.fromRGBO(57, 57, 57, 1),
+                                height: 24,
+                                width: 63,
+                              ),
+                            ),
+                          )
+                        ]),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 20),
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Divider(
+                    height: 0,
+                    thickness: 2,
+                    color: Color.fromRGBO(215, 59, 70, 1),
+                  ),
+                  Container(
+                    color: Color.fromRGBO(215, 59, 70, 1),
+                    height: MediaQuery.of(context).size.height / 20,
+                    width: MediaQuery.of(context).size.width / 2,
+                    child: Center(
+                      child: Text(
+                        'BEST SELLING PRODUCTS',
+                        style: GoogleFonts.roboto(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 5),
+                child: Container(
+                  height: 100,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        GreenContainerListItem(
+                            height: 8,
+                            width: 6,
+                            color: Color.fromRGBO(160, 97, 106, 1)),
+                        GreenContainerListItem(
+                            height: 8,
+                            width: 6,
+                            color: Color.fromRGBO(160, 97, 106, 1)),
+                        GreenContainerListItem(
+                            height: 8,
+                            width: 6,
+                            color: Color.fromRGBO(160, 97, 106, 1)),
+                        GreenContainerListItem(
+                            height: 8,
+                            width: 6,
+                            color: Color.fromRGBO(160, 97, 106, 1))
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

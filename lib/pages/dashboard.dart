@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ucliq/models/myOrdersModel.dart';
+
 import 'package:ucliq/pages/addressList.dart';
 import 'package:ucliq/pages/buyAgain.dart';
 import 'package:ucliq/pages/myFavourites.dart';
+import 'package:ucliq/pages/myNotifications.dart';
 import 'package:ucliq/pages/myOrders.dart';
 import 'package:ucliq/pages/returnsandrefunds.dart';
 import 'package:ucliq/pages/settings.dart';
@@ -108,6 +109,7 @@ class _DashboardState extends State<Dashboard> {
                         DashboardItems(
                           textName: 'My Notification',
                           imgName: 'assets/dbimg6.png',
+                          navigate: MyNotifications(),
                         ),
                       ],
                     ),

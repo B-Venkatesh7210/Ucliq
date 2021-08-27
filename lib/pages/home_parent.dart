@@ -27,7 +27,7 @@ class _HomeParentState extends State<HomeParent> {
           },
           type: BottomNavigationBarType.fixed,
           backgroundColor: Color.fromRGBO(255, 255, 255, 0.5),
-          selectedItemColor: Colors.amberAccent,
+          selectedItemColor: Colors.yellow[800],
           selectedLabelStyle: TextStyle(color: Colors.black),
           unselectedItemColor: Colors.black,
           unselectedLabelStyle: TextStyle(color: Colors.black),

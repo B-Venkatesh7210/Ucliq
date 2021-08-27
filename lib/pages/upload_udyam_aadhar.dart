@@ -94,23 +94,7 @@ class _UploadUdyamAadharState extends State<UploadUdyamAadhar> {
                             height: 50,
                             textName: 'Upload',
                             navigate: UploadUdyamAadhar2()),
-                        // child: ElevatedButton(
-                        //     style: ButtonStyle(
-                        //         backgroundColor: MaterialStateProperty.all(
-                        //             Color(0xffD73B46))),
-                        //     onPressed: () {
-                        //       Navigator.push(
-                        //           context,
-                        //           MaterialPageRoute(
-                        //               builder: (context) =>
-                        //                   UploadUdyamAadhar2()));
-                        //     },
-                        //     child: Container(
-                        //         height: 50,
-                        //         child: Center(
-                        //           child: Text('Upload',
-                        //               style: GoogleFonts.roboto()),
-                        //         ))),
+                       
                       ),
                     ],
                   ),

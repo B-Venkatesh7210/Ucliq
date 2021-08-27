@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:ucliq/models/myFavouritesListModel.dart';
 import 'package:ucliq/widgets/myFavouritesListItemWidget.dart';
 

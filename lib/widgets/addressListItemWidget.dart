@@ -59,7 +59,7 @@ class _AddressListItemState extends State<AddressListItem> {
                 ),
                 SizedBox(width: 10),
                 Text(
-                  'Default Address',
+                  widget.addressListItemClass.addressType!,
                   style: GoogleFonts.roboto(
                       color: Color.fromRGBO(215, 59, 70, 1),
                       fontSize: 12,
@@ -80,7 +80,7 @@ class _AddressListItemState extends State<AddressListItem> {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    'Bangalore, Karnataka-\n560019',
+                    widget.addressListItemClass.address!,
                     style: GoogleFonts.roboto(
                         fontSize: 12, fontWeight: FontWeight.w400),
                   )
