@@ -26,14 +26,25 @@ class _CategoryCardState extends State<CategoryCard>
   void initState() {
     super.initState();
     _controller =
-        AnimationController(vsync: this, duration: Duration(seconds: 2));
+        AnimationController(vsync: this, duration: Duration(milliseconds: 300));
     _animation =
-        CurvedAnimation(parent: _controller!, curve: Curves.linearToEaseOut);
+        CurvedAnimation(parent: _controller!, curve: Curves.fastOutSlowIn);
+  }
 
-    _controller!.forward();
+  @override
+  void dispose() {
+    _controller!.dispose();
+    super.dispose();
   }
 
   bool isTapped = false;
+  void expandAnimation() {
+    if (isTapped == true) {
+      _controller!.forward();
+    } else
+      _controller!.reverse();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -44,12 +55,9 @@ class _CategoryCardState extends State<CategoryCard>
           InkWell(
             onTap: () {
               setState(() {
-                if (isTapped == false) {
-                  isTapped = true;
-                } else {
-                  isTapped = false;
-                }
+                isTapped = !isTapped;
               });
+              expandAnimation();
             },
             child: Container(
               decoration: BoxDecoration(
@@ -98,51 +106,45 @@ class _CategoryCardState extends State<CategoryCard>
               ),
             ),
           ),
-          isTapped == true
-              ? SizeTransition(
-                  sizeFactor: _animation!,
-                  axis: Axis.vertical,
-                  axisAlignment: 1,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 5, vertical: 15),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(8)),
-                    width: double.infinity,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            CategoryCircle(
-                              img: 'assets/homeImg5.png',
-                              name: 'Chicken',
-                              navigate: CategoryChicken(),
-                            ),
-                            CategoryCircle(
-                                img: 'assets/homeImg2.png', name: 'Sea Food'),
-                            CategoryCircle(
-                                img: 'assets/homeImg4.png', name: 'Mutton')
-                          ],
-                        ),
-                        SizedBox(height: 20),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            CategoryCircle(
-                                img: 'assets/homeImg1.png', name: 'Eggs'),
-                            SizedBox(width: 40),
-                            CategoryCircle(
-                                img: 'assets/homeImg7.png',
-                                name: 'Ready to Eat'),
-                          ],
-                        )
-                      ],
-                    ),
+          SizeTransition(
+            sizeFactor: _animation!,
+            axis: Axis.vertical,
+            axisAlignment: 1,
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 5, vertical: 15),
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(8)),
+              width: double.infinity,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CategoryCircle(
+                        img: 'assets/homeImg5.png',
+                        name: 'Chicken',
+                        navigate: CategoryChicken(),
+                      ),
+                      CategoryCircle(
+                          img: 'assets/homeImg2.png', name: 'Sea Food'),
+                      CategoryCircle(img: 'assets/homeImg4.png', name: 'Mutton')
+                    ],
                   ),
-                )
-              : Container()
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      CategoryCircle(img: 'assets/homeImg1.png', name: 'Eggs'),
+                      SizedBox(width: 40),
+                      CategoryCircle(
+                          img: 'assets/homeImg7.png', name: 'Ready to Eat'),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );
