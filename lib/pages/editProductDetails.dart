@@ -1,35 +1,25 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:ucliq/models/chickenSwipeImagesModel.dart';
-import 'package:ucliq/pages/productDetails2.dart';
 import 'package:ucliq/pages/searchBar.dart';
-import 'package:ucliq/widgets/chickenSwipeImagesWidget.dart';
 import 'package:ucliq/widgets/dialogBoxCallSupport.dart';
 import 'package:ucliq/widgets/imageSliderWidget.dart';
 import 'package:ucliq/widgets/productDetailsRowItemWidget.dart';
 import 'package:ucliq/widgets/redButtonNavigator.dart';
 
-class ProductDetails extends StatefulWidget {
-  const ProductDetails({Key? key}) : super(key: key);
+class EditProductDetails extends StatefulWidget {
+  const EditProductDetails({Key? key}) : super(key: key);
 
   @override
-  _ProductDetailsState createState() => _ProductDetailsState();
+  _EditProductDetailsState createState() => _EditProductDetailsState();
 }
 
-class _ProductDetailsState extends State<ProductDetails> {
-  updateState() {
-    setState(() {});
-  }
-
-  int index = 0;
-
+class _EditProductDetailsState extends State<EditProductDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Product Details'),
+        title: Text('Edit Product Details'),
         actions: [
           Padding(
               padding: const EdgeInsets.only(right: 2),
@@ -242,8 +232,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                     ],
                   ),
                   SizedBox(height: 40),
-                  RedButtonNavigator(
-                      textName: 'DONE', navigate: ProductDetails2())
+                  RedButtonNavigator(textName: 'DONE', navigate: Placeholder())
                 ],
               ),
             ),

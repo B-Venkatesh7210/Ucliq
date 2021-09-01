@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ucliq/models/chickenSwipeImagesModel.dart';
+import 'package:ucliq/pages/placeOrder.dart';
+import 'package:ucliq/pages/searchBar.dart';
 import 'package:ucliq/widgets/chickenSwipeImagesWidget.dart';
+import 'package:ucliq/widgets/dialogBoxCallSupport.dart';
+import 'package:ucliq/widgets/redButtonNavigator.dart';
 
 class Cart extends StatefulWidget {
   const Cart({Key? key}) : super(key: key);
@@ -21,14 +25,23 @@ class _CartState extends State<Cart> {
               padding: const EdgeInsets.only(right: 2),
               child: IconButton(
                 icon: Icon(Icons.call),
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return DialogBoxCallSupport();
+                      });
+                },
                 iconSize: 30,
               )),
           Padding(
               padding: const EdgeInsets.only(right: 2),
               child: IconButton(
                 icon: Icon(Icons.search_outlined),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SearchBar()));
+                },
                 iconSize: 30,
               )),
           Padding(
@@ -161,6 +174,7 @@ class _CartState extends State<Cart> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   InkWell(
                     onTap: () {
@@ -170,6 +184,7 @@ class _CartState extends State<Cart> {
                       padding: EdgeInsets.symmetric(vertical: 10),
                       child: Center(
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Icon(Icons.edit),
                             SizedBox(width: 10),
@@ -190,6 +205,77 @@ class _CartState extends State<Cart> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      print('tapped');
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      child: Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.delete),
+                            SizedBox(width: 10),
+                            Text(
+                              'Remove Seller',
+                              style: GoogleFonts.roboto(
+                                  color: Colors.black,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ],
+                        ),
+                      ),
+                      height: MediaQuery.of(context).size.height / 15,
+                      width: MediaQuery.of(context).size.width / 2.5,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(255, 202, 40, 1),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Expanded(child: Container()),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              color: Color.fromRGBO(236, 235, 235, 1),
+              height: MediaQuery.of(context).size.height / 10,
+              width: double.infinity,
+              child: Row(
+                children: [
+                  Image.asset(
+                    'assets/ruppee.png',
+                    width: 20,
+                  ),
+                  SizedBox(width: 10),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 25),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '4,000',
+                          style: GoogleFonts.roboto(
+                              fontSize: 20, fontWeight: FontWeight.w700),
+                        ),
+                        Text(
+                          'Including GST',
+                          style: GoogleFonts.roboto(
+                              fontSize: 9, fontWeight: FontWeight.w400),
+                        )
+                      ],
+                    ),
+                  ),
+                  Expanded(child: Container()),
+                  RedButtonNavigator(
+                    textName: 'Place Order',
+                    navigate: PlaceOrder(),
+                    width: MediaQuery.of(context).size.width / 4,
+                    height: MediaQuery.of(context).size.height / 22,
                   )
                 ],
               ),

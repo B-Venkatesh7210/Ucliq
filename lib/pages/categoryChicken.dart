@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:ucliq/models/chickenListItemModel.dart';
+import 'package:ucliq/pages/searchBar.dart';
 import 'package:ucliq/widgets/chickenListItemWidget.dart';
+import 'package:ucliq/widgets/dialogBoxCallSupport.dart';
 
 class CategoryChicken extends StatefulWidget {
   const CategoryChicken({Key? key}) : super(key: key);
@@ -21,14 +23,23 @@ class _CategoryChickenState extends State<CategoryChicken> {
               padding: const EdgeInsets.only(right: 2),
               child: IconButton(
                 icon: Icon(Icons.call),
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return DialogBoxCallSupport();
+                      });
+                },
                 iconSize: 30,
               )),
           Padding(
               padding: const EdgeInsets.only(right: 2),
               child: IconButton(
                 icon: Icon(Icons.search_outlined),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SearchBar()));
+                },
                 iconSize: 30,
               )),
           Padding(

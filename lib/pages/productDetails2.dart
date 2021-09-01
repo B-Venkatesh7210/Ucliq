@@ -3,7 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ucliq/models/chickenSwipeImagesModel.dart';
 import 'package:ucliq/pages/cart.dart';
 import 'package:ucliq/pages/productDetails.dart';
+import 'package:ucliq/pages/searchBar.dart';
 import 'package:ucliq/widgets/chickenSwipeImagesWidget.dart';
+import 'package:ucliq/widgets/dialogBoxCallSupport.dart';
 import 'package:ucliq/widgets/imageSliderWidget.dart';
 import 'package:ucliq/widgets/redButtonNavigator.dart';
 
@@ -26,14 +28,23 @@ class _ProductDetails2State extends State<ProductDetails2> {
               padding: const EdgeInsets.only(right: 2),
               child: IconButton(
                 icon: Icon(Icons.call),
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return DialogBoxCallSupport();
+                      });
+                },
                 iconSize: 30,
               )),
           Padding(
               padding: const EdgeInsets.only(right: 2),
               child: IconButton(
                 icon: Icon(Icons.search_outlined),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SearchBar()));
+                },
                 iconSize: 30,
               )),
           Padding(

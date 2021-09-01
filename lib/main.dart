@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:ucliq/pages/searchBar.dart';
 
 import 'package:ucliq/pages/welcome_screen.dart';
 
