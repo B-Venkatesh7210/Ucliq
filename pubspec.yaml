@@ -29,6 +29,8 @@ dependencies:
   intl: ^0.17.0
   timeline_tile: ^2.0.0
   carousel_slider: ^4.0.0
+  lottie: ^1.1.0
+  
   
   
 

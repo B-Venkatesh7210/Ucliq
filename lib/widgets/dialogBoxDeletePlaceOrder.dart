@@ -30,12 +30,8 @@ class _DialogBoxDeletePlaceOrderState extends State<DialogBoxDeletePlaceOrder> {
               children: [
                 ElevatedButton(
                   onPressed: () {
+                    Navigator.pop(context);
                     showDialog(
-                        routeSettings: RouteSettings(
-                            arguments: Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => PlaceOrder()))),
                         context: context,
                         builder: (context) {
                           return Dialog(

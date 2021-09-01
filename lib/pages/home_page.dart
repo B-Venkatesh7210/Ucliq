@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ucliq/pages/dashboard.dart';
 import 'package:ucliq/widgets/dialogBoxCallSupport.dart';
 import 'package:ucliq/widgets/greenContainerListItemWidget.dart';
-
 import 'kyc_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -42,6 +41,7 @@ class _HomePageState extends State<HomePage> {
                               MaterialStateProperty.all(Color(0xffD73B46))),
                       onPressed: () {
                         showDialog(
+                        
                             context: context,
                             builder: (context) => DialogBoxCallSupport());
                       },
@@ -65,19 +65,22 @@ class _HomePageState extends State<HomePage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
+                  style: TextStyle(fontSize: 20),
                   keyboardType: TextInputType.text,
                   controller: tec4,
                   decoration: InputDecoration(
-                      prefixIcon: Icon(
-                        Icons.search_outlined,
-                        color: Colors.black,
-                      ),
-                      hintText: "Search",
-                      hintStyle: TextStyle(color: Colors.grey),
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Color.fromRGBO(129, 129, 129, 1),
-                              width: 2))),
+                    focusedBorder: InputBorder.none,
+                    border: InputBorder.none,
+                    fillColor: Colors.grey[250],
+                    filled: true,
+                    prefixIcon: Icon(
+                      Icons.search_outlined,
+                      color: Colors.black,
+                      size: 30,
+                    ),
+                    hintText: "Search",
+                    hintStyle: TextStyle(color: Colors.grey),
+                  ),
                 ),
               ),
               Container(

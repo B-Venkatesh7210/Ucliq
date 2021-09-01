@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ucliq/models/placeOrderListItemModel.dart';
+import 'package:ucliq/pages/checkout.dart';
 import 'package:ucliq/pages/searchBar.dart';
 import 'package:ucliq/widgets/dialogBoxCallSupport.dart';
 import 'package:ucliq/widgets/placeOrderListItemWidget.dart';
@@ -94,7 +95,7 @@ class _PlaceOrderState extends State<PlaceOrder> {
                 Expanded(child: Container()),
                 RedButtonNavigator(
                   textName: 'Place Order',
-                  navigate: PlaceOrder(),
+                  navigate: Checkout(),
                   width: MediaQuery.of(context).size.width / 4,
                   height: MediaQuery.of(context).size.height / 22,
                 )

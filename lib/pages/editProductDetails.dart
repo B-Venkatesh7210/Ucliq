@@ -5,7 +5,7 @@ import 'package:ucliq/pages/searchBar.dart';
 import 'package:ucliq/widgets/dialogBoxCallSupport.dart';
 import 'package:ucliq/widgets/imageSliderWidget.dart';
 import 'package:ucliq/widgets/productDetailsRowItemWidget.dart';
-import 'package:ucliq/widgets/redButtonNavigator.dart';
+
 
 class EditProductDetails extends StatefulWidget {
   const EditProductDetails({Key? key}) : super(key: key);
@@ -232,7 +232,17 @@ class _EditProductDetailsState extends State<EditProductDetails> {
                     ],
                   ),
                   SizedBox(height: 40),
-                  RedButtonNavigator(textName: 'DONE', navigate: Placeholder())
+                  ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(Color(0xffD73B46))),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Container(
+                          child: Center(
+                        child: Text('DONE', style: GoogleFonts.roboto()),
+                      )))
                 ],
               ),
             ),

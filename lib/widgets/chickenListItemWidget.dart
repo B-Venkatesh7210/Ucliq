@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 import 'package:ucliq/models/chickenListItemModel.dart';
 import 'package:ucliq/pages/productDetails.dart';
 
@@ -14,7 +15,15 @@ class ChickenListItem extends StatefulWidget {
   _ChickenListItemState createState() => _ChickenListItemState();
 }
 
-class _ChickenListItemState extends State<ChickenListItem> {
+class _ChickenListItemState extends State<ChickenListItem>
+    with TickerProviderStateMixin {
+  late final AnimationController _animationController;
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(vsync: this);
+  }
+
   bool isTapped = false;
   @override
   Widget build(BuildContext context) {
@@ -99,25 +108,23 @@ class _ChickenListItemState extends State<ChickenListItem> {
             ),
             InkWell(
                 onTap: () {
+                  if (isTapped) {
+                    _animationController
+                      ..duration = Duration(milliseconds: 500);
+                    _animationController.reverse();
+                  } else {
+                    _animationController..duration = Duration(seconds: 1);
+                    _animationController.forward();
+                  }
                   setState(() {
-                    if (isTapped == false) {
-                      isTapped = true;
-                    } else {
-                      isTapped = false;
-                    }
+                    isTapped = !isTapped;
                   });
                 },
-                child: isTapped == true
-                    ? Icon(
-                        Icons.favorite,
-                        color: Color.fromRGBO(215, 59, 70, 1),
-                        size: 36,
-                      )
-                    : Icon(
-                        Icons.favorite,
-                        color: Colors.grey,
-                        size: 36,
-                      ))
+                child: Lottie.asset('assets/likeAnimation.json',
+                    width: 50,
+                    repeat: false,
+                    controller: _animationController,
+                    onLoaded: (x) {}))
           ],
         ),
       ),
