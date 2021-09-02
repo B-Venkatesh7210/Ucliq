@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import 'package:ucliq/models/myOrdersModel.dart';
+import 'package:ucliq/widgets/dialogBoxCallSupport.dart';
 
 class TrackOrder extends StatefulWidget {
   final MyOrderDetails orderDetails;
@@ -25,7 +26,13 @@ class _TrackOrderState extends State<TrackOrder> {
               padding: const EdgeInsets.only(right: 10),
               child: IconButton(
                 icon: Icon(Icons.call),
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return DialogBoxCallSupport();
+                      });
+                },
                 iconSize: 40,
               ))
         ],

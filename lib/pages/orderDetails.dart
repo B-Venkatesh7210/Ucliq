@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:ucliq/models/myOrdersModel.dart';
 
 import 'package:ucliq/pages/trackOrder.dart';
+import 'package:ucliq/widgets/dialogBoxCallSupport.dart';
 
 class OrderDetails extends StatefulWidget {
   final MyOrderDetails orderDetails;
@@ -27,7 +28,13 @@ class _OrderDetailsState extends State<OrderDetails> {
               padding: const EdgeInsets.only(right: 10),
               child: IconButton(
                 icon: Icon(Icons.call),
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return DialogBoxCallSupport();
+                      });
+                },
                 iconSize: 40,
               ))
         ],

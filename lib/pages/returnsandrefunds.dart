@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ucliq/widgets/dialogBoxCallSupport.dart';
 
 class ReturnsAndRefunds extends StatefulWidget {
   ReturnsAndRefunds({Key? key}) : super(key: key);
@@ -19,7 +20,13 @@ class _ReturnsAndRefundsState extends State<ReturnsAndRefunds> {
               padding: const EdgeInsets.only(right: 10),
               child: IconButton(
                 icon: Icon(Icons.call),
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return DialogBoxCallSupport();
+                      });
+                },
                 iconSize: 40,
               ))
         ],

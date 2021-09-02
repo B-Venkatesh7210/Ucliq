@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:ucliq/models/myOrdersModel.dart';
+import 'package:ucliq/widgets/dialogBoxCallSupport.dart';
 
 import 'package:ucliq/widgets/myOrdersWidget.dart';
 
@@ -24,7 +25,13 @@ class _MyOrdersState extends State<MyOrders> {
               padding: const EdgeInsets.only(right: 10),
               child: IconButton(
                 icon: Icon(Icons.call),
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return DialogBoxCallSupport();
+                      });
+                },
                 iconSize: 40,
               ))
         ],

@@ -41,6 +41,7 @@ class _SearchBarState extends State<SearchBar> {
           height: 50,
           width: double.infinity,
           child: Row(
+            
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 10),
@@ -72,10 +73,7 @@ class _SearchBarState extends State<SearchBar> {
                   keyboardType: TextInputType.text,
                 ),
               ),
-              VerticalDivider(
-                width: 0,
-                thickness: 2,
-              ),
+             
               IconButton(
                   onPressed: () {},
                   icon: Icon(
